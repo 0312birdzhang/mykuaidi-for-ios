@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>ResultPage.qml</file>
+        <file>Themex.qml</file>
+    </qresource>
+</RCC>
