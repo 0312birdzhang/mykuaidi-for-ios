@@ -18,5 +18,6 @@ OTHER_FILES += \
     ResultPage.qml \
     Silica/*.qml \
     Silica/*.js \
-    SaveDialog.qml
+    SaveDialog.qml \
+    FirstPage.qml
 

@@ -5,18 +5,21 @@ import QtQuick 2.0
 import QtQuick.Controls 1.0
 import "Silica"
 
-SilicaFlickable{
-    id:resultpage
+Item {
+    id:resultPage
+    width: parent.width
+    height: parent.height
     anchors.fill: parent
-    Item {
-        id:resultPage
-        anchors.fill: parent
-        Label{
-            text: "Test"
-            anchors.centerIn: parent
+    Label{
+        text: "Test"
+        anchors.centerIn: parent
+        MouseArea{
+            anchors.fill: parent
+            onClicked: pageStack.pop()
         }
     }
 }
+
 
 
 

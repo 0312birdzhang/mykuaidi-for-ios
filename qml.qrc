@@ -10,5 +10,6 @@
         <file>Silica/FastScrollAnimation.js</file>
         <file>EditDialog.qml</file>
         <file>SaveDialog.qml</file>
+        <file>FirstPage.qml</file>
     </qresource>
 </RCC>
