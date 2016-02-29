@@ -6,21 +6,10 @@ Item{
     id:firstpage
     width: parent.width
     height: parent.height
-    Label {
-        id:mytitle
-        text: qsTr("MyKuaidi")
-        anchors{
-            top:parent.top
-            topMargin: mytheme.paddingMedium
-            right:parent.right
-            rightMargin: mytheme.paddingMedium
-        }
-        font.pixelSize: mytheme.fontSizeExtraLarge
-    }
     Column {
         id: column
         anchors{
-            top:mytitle.bottom
+            top:parent.top
             topMargin: mytheme.paddingMedium
         }
 
@@ -32,7 +21,7 @@ Item{
             width: application.width - mytheme.paddingLarge
             height: input.height + mytheme.paddingLarge * 3
             anchors.horizontalCenter: application.horizontalCenter
-            anchors.top:mytitle.bottom
+            anchors.top:parent.top
             anchors.topMargin: mytheme.paddingMedium
             border.color:mytheme.highlightColor
             color:"#00000000"

@@ -76,13 +76,13 @@ Rectangle {
                 width:parent.width
                 height: Math.max(showpage.width/3, implicitHeight)
                 font.pixelSize: mytheme.fontSizeMedium
-                placeholderText: "输入您的备注"
+                //placeholderText: "输入您的备注"
             }
         }
 
     }
 
-    ButtonRow{
+    Row{
         width:400;
         anchors.bottom: parent.bottom;
         anchors.bottomMargin: mytheme.paddingLarge

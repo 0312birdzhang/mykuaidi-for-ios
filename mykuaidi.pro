@@ -19,5 +19,11 @@ OTHER_FILES += \
     Silica/*.qml \
     Silica/*.js \
     SaveDialog.qml \
-    FirstPage.qml
+    FirstPage.qml \
+    ShowPage.qml \
+    js/storage.js \
+    js/parser.js \
+    js/allposts.js \
+    AutoPostNamePage.qml
 
+TRANSLATIONS += translations/mykuaidi.ts

@@ -11,5 +11,12 @@
         <file>EditDialog.qml</file>
         <file>SaveDialog.qml</file>
         <file>FirstPage.qml</file>
+        <file>ShowPage.qml</file>
+        <file>js/storage.js</file>
+        <file>js/parser.js</file>
+        <file>js/allposts.js</file>
+        <file>AutoPostNamePage.qml</file>
+        <file>images/toolbar.png</file>
+        <file>images/navigation_previous_item.png</file>
     </qresource>
 </RCC>
