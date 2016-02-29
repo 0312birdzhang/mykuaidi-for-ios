@@ -41,67 +41,52 @@ var autopostModel=[];
 function getPostname(postnum,callbackfun){
     var url="http://m.kuaidi100.com/autonumber/auto?num="+postnum;
     console.log("url:"+url)
-    sendWebRequest(url,callbackfun,"GET","");
+    sendWebRequest(url,loadPostname,"GET","");
 }
 
 function loadPostname(oritxt){
     var obj=JSON.parse(oritxt);
     autopostModel.clear();
     for(var i in obj){
-        autopostModel.concat([obj[i].comCode,getLabel(obj[i].comCode)])
+        autopostModel.append({
+                          "value":obj[i].comCode,
+                          "label":getLabel(obj[i].comCode)
+                        });
     }
     if(autopostModel.length>0){
 
     }
+    console.log("autopostModel:"+autopostModel)
 }
 
 
+var showlistModel;
 //查询快递
-function load(type,postid) {
-    progress.visible = true;
-    listModel.clear();
-    var xhr = new XMLHttpRequest();
+function getPostdetail(type,postid){
     var url="http://m.kuaidi100.com/query?type="+type+"&postid="+postid+"&id=1&valicode=&temp="+getRandom();
-    console.log(url)
-    xhr.open("GET",url,true);
-    xhr.onreadystatechange = function(){
-        if ( xhr.readyState == xhr.DONE){
-            if ( xhr.status == 200){
-                //console.log(xhr.responseText)
-                var jsonObject = eval('(' + xhr.responseText + ')');
-                loaded(jsonObject)
-
-            }else{
-                listModel.append({
-                                 "sort":"",
-                                 "time":"Error: " +xhr.status,
-                                 "maintext":"网络问题，请检查手机网络后再试^_^"
-                          });
-                progress.visible = false;
-            }
-        }
-    }
-    xhr.send();
+    console.log("detail url :"+url)
+    sendWebRequest(url,loadPostdetail,"GET","");
 }
 
 
+function loadPostdetail(oritxt){
+    var obj=JSON.parse(oritxt);
+    showlistModel.clear();
+    if(obj.status == 200){
 
-function loaded(jsonObject){
-    savebutton.enabled = true;
-    if(jsonObject.status == 200){
-        for ( var process in jsonObject.data   ){
-            listModel.append({
-                         "sort":process,
-                         "time" : jsonObject.data[process].time,
-                         "maintext" : jsonObject.data[process].context
+        for ( var i in obj.data   ){
+            showlistModel.append({
+                         "sort":i,
+                         "time" : obj.data[i].time,
+                         "maintext" : obj.data[i].context
                      });
         }
     }else{
-        listModel.append({
+        showlistModel.append({
                          "sort":"",
-                         "time":"Error: " +jsonObject.status,
-                         "maintext":jsonObject.message+"\n请检查快递公司和单号是否正确！\n如果都正确，可能存在快递延误,请保存订单稍后再试^_^"
+                         "time":"Error: " +obj.status,
+                         "maintext":obj.message+"\n请检查快递公司和单号是否正确！\n如果都正确，可能存在快递延误,请保存订单稍后再试^_^"
                   });
     }
-    progress.visible = false;
+
 }

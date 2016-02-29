@@ -23,6 +23,7 @@ Item{
     }
 
     Component.onCompleted: {
+        apptitle = "选择快递商"
         JS.autopostModel = autopostModel
         JS.getPostname(postid)
 
@@ -51,26 +52,23 @@ Item{
     SilicaListView {
         id:view
         anchors.fill:parent
-        header:Label {
-            id:header
-            text: "选择快递商"
-            font.pixelSize: mytheme.fontSizeLarge
-            anchors.right: parent.right
-        }
         width:parent.width
         model : autopostModel
         clip: true
-        delegate:Item {
+        delegate:Item{
+            height: mytheme.graphicSizeMedium
+            width: parent.width
             Label{
                 anchors.verticalCenter:parent.verticalCenter
                 id:showprocess
                 wrapMode: Text.WordWrap
-                x:Theme.paddingLarge
+                x:mytheme.paddingLarge
                 maximumLineCount:2
                 //truncationMode: TruncationMode.Fade
-                width: parent.width-Theme.paddingLarge *2
+                width: parent.width-mytheme.paddingLarge *2
                 text: (model.index+1) + ". "+label
-                color: view.highlighted ? Theme.highlightColor : Theme.primaryColor
+                font.pixelSize: mytheme.fontSizeMedium
+                //color: view.highlighted ? mytheme.highlightColor : mytheme.primaryColor
             }
             MouseArea{
                 anchors.fill: parent

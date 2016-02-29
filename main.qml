@@ -11,6 +11,7 @@ import "Silica"
 ApplicationWindow {
     id:application
     visible: true
+    property string apptitle: qsTr("mykuaidi")
     title: qsTr("MyKuaidi")
     height: Screen.height
     width: Screen.width
@@ -26,14 +27,14 @@ ApplicationWindow {
     }
 
     // Implements back key navigation
-    Keys.onReleased: {
-        if (event.key === Qt.Key_Back) {
-            if (pageStack.depth > 1) {
-                pageStack.pop();
-                event.accepted = true;
-            } else { Qt.quit(); }
-        }
-    }
+//    Keys.onReleased: {
+//        if (event.key === Qt.Key_Back) {
+//            if (pageStack.depth > 1) {
+//                pageStack.pop();
+//                event.accepted = true;
+//            } else { Qt.quit(); }
+//        }
+//    }
 
     toolBar: BorderImage {
         border.bottom: mytheme.paddingSmall
@@ -72,7 +73,7 @@ ApplicationWindow {
             x: backButton.x + backButton.width + 20
             anchors.verticalCenter: parent.verticalCenter
             color: "black"
-            text: qsTr("MyKuaidi")
+            text: apptitle
         }
     }
 

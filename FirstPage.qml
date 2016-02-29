@@ -45,6 +45,7 @@ Item{
                     echoMode: TextInput.Normal
                     font.pixelSize: mytheme.fontSizeMedium
                     placeholderText: "请输入快递号"
+                    text: "881126974169302203"
                     focus: true
                     //label: "快递号"
                     style: TextFieldStyle {
