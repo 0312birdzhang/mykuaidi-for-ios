@@ -29,8 +29,8 @@
 */
 import QtQuick 2.0
 import QtQuick.Controls 1.0
-import "parser.js" as JS
-import "storage.js" as ST
+import "js/parser.js" as JS
+import "js/storage.js" as ST
 import "./Silica"
 
 Item{

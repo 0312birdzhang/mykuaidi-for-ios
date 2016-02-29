@@ -40,6 +40,7 @@ function sendWebRequest(url, callback, method, postdata) {
 var autopostModel=[];
 function getPostname(postnum,callbackfun){
     var url="http://m.kuaidi100.com/autonumber/auto?num="+postnum;
+    console.log("url:"+url)
     sendWebRequest(url,callbackfun,"GET","");
 }
 

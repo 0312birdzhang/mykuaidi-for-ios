@@ -69,7 +69,7 @@ Item{
                             postid.focus=false;
                             if(postid.text&&postid.text.length>2){
                                 postid.placeholderText="请输入快递号";
-                                pageStack.push(Qt.resolvedUrl("ResultPage.qml"),
+                                pageStack.push(Qt.resolvedUrl("AutoPostNamePage.qml"),
                                                {
                                                    "postid":postid.text,
                                                });

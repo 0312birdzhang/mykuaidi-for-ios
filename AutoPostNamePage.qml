@@ -2,9 +2,10 @@ import QtQuick 2.0
 import QtQuick.Controls 1.0
 import QtQuick.Controls.Styles 1.0
 
-import "./parser.js" as JS
-import "./allposts.js" as Posts
+import "js/parser.js" as JS
+import "js/allposts.js" as Posts
 import "./Silica"
+
 Item{
     id:secondWizardPage
     property string postid
@@ -39,20 +40,22 @@ Item{
     ListModel {  id:autopostModel }
     ListModel {  id: postnames    }
 
-    BusyIndicator {
-        id:progress
-        running: !PageStatus.Active
-        parent:secondWizardPage
-        size: BusyIndicatorSize.Large
-        anchors.centerIn: parent
-    }
+//    BusyIndicator {
+//        id:progress
+//        running: !PageStatus.Active
+//        parent:secondWizardPage
+//        size: BusyIndicatorSize.Large
+//        anchors.centerIn: parent
+//    }
 
     SilicaListView {
         id:view
         anchors.fill:parent
-        header:PageHeader {
+        header:Label {
             id:header
-            title: "选择快递商"
+            text: "选择快递商"
+            font.pixelSize: mytheme.fontSizeLarge
+            anchors.right: parent.right
         }
         width:parent.width
         model : autopostModel

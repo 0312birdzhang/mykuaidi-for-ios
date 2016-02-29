@@ -28,8 +28,8 @@ ApplicationWindow {
     // Implements back key navigation
     Keys.onReleased: {
         if (event.key === Qt.Key_Back) {
-            if (stackView.depth > 1) {
-                stackView.pop();
+            if (pageStack.depth > 1) {
+                pageStack.pop();
                 event.accepted = true;
             } else { Qt.quit(); }
         }
@@ -40,18 +40,19 @@ ApplicationWindow {
         source: "images/toolbar.png"
         width: parent.width
         height: mytheme.graphicSizeMedium
-        visible: pageStack.depth > 1
+
         Rectangle {
             id: backButton
             width: opacity ? 60 : 0
             anchors.left: parent.left
             anchors.leftMargin: mytheme.paddingMedium
-            opacity: stackView.depth > 1 ? 1 : 0
+            opacity: pageStack.depth > 1 ? 1 : 0
+            visible: pageStack.depth > 1
             anchors.verticalCenter: parent.verticalCenter
             antialiasing: true
             height: 60
             radius: 4
-            color: backmouse.pressed ? "#222" : "transparent"
+            color: backmouse.pressed ? "white" : "transparent"
             Behavior on opacity { NumberAnimation{} }
             Image {
                 anchors.verticalCenter: parent.verticalCenter
