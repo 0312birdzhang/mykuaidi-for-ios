@@ -56,9 +56,11 @@ Item{
             id:view
             anchors.fill:parent
             model : listModel
-            header:PageHeader {
+            header:Label {
                 id:header
-                title: "物流情况"
+                text: "物流情况"
+                font.pixelSize: mytheme.fontSizeLarge
+                anchors.right: parent.right
             }
             clip: true
 //            PullDownMenu {
