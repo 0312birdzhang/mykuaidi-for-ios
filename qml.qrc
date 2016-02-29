@@ -3,5 +3,12 @@
         <file>main.qml</file>
         <file>ResultPage.qml</file>
         <file>Themex.qml</file>
+        <file>Silica/SilicaListView.qml</file>
+        <file>Silica/SilicaGridView.qml</file>
+        <file>Silica/SilicaFlickable.qml</file>
+        <file>Silica/FastScrollAnimation.qml</file>
+        <file>Silica/FastScrollAnimation.js</file>
+        <file>EditDialog.qml</file>
+        <file>SaveDialog.qml</file>
     </qresource>
 </RCC>

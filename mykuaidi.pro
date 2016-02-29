@@ -12,8 +12,11 @@ QML_IMPORT_PATH =
 # Default rules for deployment.
 include(deployment.pri)
 
-DISTFILES += \
+OTHER_FILES += \
     Themex.qml \
     main.qml \
-    ResultPage.qml
+    ResultPage.qml \
+    Silica/*.qml \
+    Silica/*.js \
+    SaveDialog.qml
 
