@@ -48,6 +48,7 @@ Item{
             JS.showlistModel = showlistModel;
             JS.getPostdetail(wuliutype,postid);
         }
+
         ListModel {  id:showlistModel }
 
 

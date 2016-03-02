@@ -6,6 +6,16 @@ SOURCES += main.cpp
 
 RESOURCES += qml.qrc
 
+
+ios: {
+    QMAKE_INFO_PLIST = $$PWD/Quicksand-Info.plist
+    QTPLUGIN +=  qsvg
+    OTHER_FILES += mykuaidi-Info.plist
+
+    icons.files += icon/ios/Icon.png
+    QMAKE_BUNDLE_DATA += icons
+}
+
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
 

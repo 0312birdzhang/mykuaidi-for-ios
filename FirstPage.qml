@@ -6,13 +6,12 @@ Item{
     id:firstpage
     width: parent.width
     height: parent.height
+    Component.onCompleted: {
+        application.apptitle = qsTr("mykuaidi");
+    }
+
     Column {
         id: column
-        anchors{
-            top:parent.top
-            topMargin: mytheme.paddingMedium
-        }
-
         width: parent.width
         spacing: mytheme.paddingLarge
 
@@ -28,10 +27,6 @@ Item{
             radius: 30
             Column {
                 id:input
-                anchors{
-                    top:rectangle.top
-                    horizontalCenter: column.horizontalCenter
-                }
                 width:parent.width
                 anchors.topMargin: mytheme.paddingLarge
                 visible: true

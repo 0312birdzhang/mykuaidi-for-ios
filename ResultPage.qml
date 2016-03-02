@@ -10,6 +10,9 @@ Item {
     width: parent.width
     height: parent.height
     anchors.fill: parent
+    Component.onCompleted: {
+        application.apptitle = qqsTr("ResultPage");
+    }
     Label{
         text: "Test"
         anchors.centerIn: parent

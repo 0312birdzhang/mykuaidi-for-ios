@@ -23,10 +23,9 @@ Item{
     }
 
     Component.onCompleted: {
-        apptitle = "选择快递商"
+        apptitle = "选择快递商";
         JS.autopostModel = autopostModel
         JS.getPostname(postid)
-
     }
 
     function fillPosts(){

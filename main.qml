@@ -13,8 +13,37 @@ ApplicationWindow {
     visible: true
     property string apptitle: qsTr("mykuaidi")
     title: qsTr("MyKuaidi")
-    height: Screen.height
-    width: Screen.width
+    width: isMobile() ? Screen.width : 480
+    height: isMobile() ? Screen.height : 800
+
+    onActiveFocusItemChanged: {
+            if (activeFocusItem !== null
+                    && activeFocusItem.Keys !== undefined)
+            {
+                activeFocusItem.Keys.onReleased.disconnect(onKeyReleased)
+            }
+            if (activeFocusItem !== null)
+            {
+                activeFocusItem.Keys.onReleased.connect(onKeyReleased)
+            }
+        }
+
+        function onKeyReleased(event) {
+            if (event.key === Qt.Key_Back
+                    || event.key === Qt.Key_Escape)
+            {
+                console.log("accepted now")
+                if(pageStack.depth > 1) {
+                    pageStack.pop()
+                }
+                else {
+                    msgDlgQuit.open()
+                }
+
+                event.accepted = true
+            }
+        }
+
 
     StackView{
         id:pageStack
@@ -25,6 +54,19 @@ ApplicationWindow {
     Themex{
         id:mytheme
     }
+
+    function isMobile() {
+            var b = false
+            switch(Qt.platform.os) {
+            case "ios":
+                b = true
+                break
+            case "android":
+                b = true
+                break
+            }
+            return b
+        }
 
     // Implements back key navigation
 //    Keys.onReleased: {
