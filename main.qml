@@ -112,7 +112,7 @@ ApplicationWindow {
         Text {
             font.pixelSize: mytheme.fontSizeHuge
             Behavior on x { NumberAnimation{ easing.type: Easing.OutCubic} }
-            x: backButton.x + backButton.width + 20
+            x: backButton.x + backButton.width + mytheme.paddingMedium
             anchors.verticalCenter: parent.verticalCenter
             color: "black"
             text: apptitle

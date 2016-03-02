@@ -12,15 +12,14 @@ Item{
 
     Column {
         id: column
-        width: parent.width
+        width: application.width
         spacing: mytheme.paddingLarge
 
         Rectangle{
             id:rectangle
             width: application.width - mytheme.paddingLarge
             height: input.height + mytheme.paddingLarge * 3
-            anchors.horizontalCenter: application.horizontalCenter
-            anchors.top:parent.top
+            anchors.horizontalCenter: parent.horizontalCenter
             anchors.topMargin: mytheme.paddingMedium
             border.color:mytheme.highlightColor
             color:"#00000000"
@@ -28,7 +27,10 @@ Item{
             Column {
                 id:input
                 width:parent.width
-                anchors.topMargin: mytheme.paddingLarge
+                anchors{
+                    top:parent.top
+                    topMargin: mytheme.paddingLarge
+                }
                 visible: true
                 spacing: mytheme.paddingMedium
                 TextField {

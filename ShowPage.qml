@@ -48,6 +48,9 @@ Item{
             JS.showlistModel = showlistModel;
             JS.getPostdetail(wuliutype,postid);
         }
+        Component.onDestruction: {
+            apptitle = "选择快递商"
+        }
 
         ListModel {  id:showlistModel }
 

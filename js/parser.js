@@ -1,6 +1,6 @@
 Qt.include("allposts.js");
 var themeColor;
-
+var signalcenter;
 function sendWebRequest(url, callback, method, postdata) {
     var xmlhttp = new XMLHttpRequest();
     //console.log(url)

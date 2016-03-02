@@ -28,9 +28,14 @@ Item{
         JS.getPostname(postid)
     }
 
+    Component.onDestruction: {
+        apptitle = qsTr("mykuaidi")
+    }
+
     function fillPosts(){
         for ( var i in Posts.allpost   ){
-            postnames.append({"label":Posts.allpost[i].label,
+            postnames.append(
+                                {"label":Posts.allpost[i].label,
                                  "value":Posts.allpost[i].value
                              });
         }
