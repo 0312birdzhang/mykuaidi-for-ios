@@ -12,7 +12,7 @@ ios: {
     QTPLUGIN +=  qsvg
     OTHER_FILES += mykuaidi-Info.plist
 
-    icons.files += icon/ios/Icon.png
+    icons.files += gfx/btn.png
     QMAKE_BUNDLE_DATA += icons
 }
 
